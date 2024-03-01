@@ -14,12 +14,14 @@ import zoomPlugin from "chartjs-plugin-zoom"
 import {
   Box,
   Button,
+  ButtonGroup,
   Container,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
   Stack,
+  Typography,
 } from "@mui/material"
 import ChartBox from "./components/ChartBox/ChartBox"
 import "chartjs-plugin-zoom"
@@ -47,47 +49,43 @@ function App() {
     }
   }
 
-  const handleChange = event => {
-    setChartSize(event.target.value)
+  const handleChange = size => {
+    setChartSize(size)
     if (chartRef.current) {
-      chartRef.current.zoomScale(
-        "x",
-        { min: 0, max: event.target.value },
-        "default"
-      )
+      chartRef.current.zoomScale("x", { min: 0, max: size }, "default")
     }
     console.log(chartRef.current.getZoomLevel())
   }
 
   return (
     <Container maxWidth='xl' className='App'>
-      <ChartBox title='English - Reverse'>
-        <Box sx={{ width: 800, height: 450 }}>
+      <ChartBox title='Sealed - Reverse'>
+        <Box sx={{ width: 800, height: 420 }}>
           <Line
             ref={chartRef}
             options={chartOption.zoomOption}
             data={data_english}
           />
         </Box>
-        <Stack direction='row' spacing={2}>
+        <Stack direction='row' spacing={2} ml={5} mr={1} my={4}>
           <FormControl fullWidth>
-            <InputLabel id='select-graph-size-label'>ขนาดกราฟ</InputLabel>
-            <Select
-              labelId='select-graph-size-label'
-              value={chartSize}
-              size='small'
-              label='ขนาด'
-              onChange={handleChange}
-            >
-              <MenuItem value={5}>5</MenuItem>
-              <MenuItem value={10}>10</MenuItem>
-              <MenuItem value={15}>15</MenuItem>
-              <MenuItem value={20}>20</MenuItem>
-              <MenuItem value={25}>25</MenuItem>
-              <MenuItem value={30}>30</MenuItem>
-            </Select>
+            <ButtonGroup size='medium' aria-label='Graph Size' disableElevation>
+              {[5, 10, 15, 20, 25, 30].map(size => (
+                <Button
+                  key={size}
+                  variant={chartSize === size ? "contained" : "outlined"}
+                  onClick={() => handleChange(size)}
+                >
+                  {size}
+                </Button>
+              ))}
+            </ButtonGroup>
           </FormControl>
-          <Button variant='contained' onClick={handleResetZoom}>
+          <Button
+            disableElevation
+            variant='contained'
+            onClick={handleResetZoom}
+          >
             Reset
           </Button>
         </Stack>

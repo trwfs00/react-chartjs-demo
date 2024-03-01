@@ -39,19 +39,24 @@ export const data_english = {
     datasets: [
       {
         label: "1 เฮลท์แคร์ จำกัด",
-        data: labels.map(() =>
-          faker.datatype.number({ min: 1000000, max: 15000000 })
-        ),
+        data: [1500000, 1400000, 1300000, 1100000, 900000],
+        fill: false,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
       {
         label: "1 บวก 2 พี่น้องกัน จำกัด",
-        data: labels.map(() =>
-          faker.datatype.number({ min: 1000000, max: 15000000 })
-        ),
+        data: [1450000, 1200000, 950000],
+        fill: false,
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
+      },
+      {
+        label: "Praut Company",
+        data: [1500000, 1000000],
+        fill: false,
+        borderColor: "rgb(0, 134, 64)",
+        backgroundColor: "rgba(0, 134, 64, 0.5)",
       },
     ],
   }
