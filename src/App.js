@@ -61,11 +61,11 @@ function App() {
 
   return (
     <Container maxWidth='xl' className='App'>
-      <ChartBox title='English - Reverse'>
+      <ChartBox title='English - Forward'>
         <Box sx={{ width: 800, height: 450 }}>
           <Line
             ref={chartRef}
-            options={chartOption.zoomOption}
+            options={chartOption.ENGLISH_OPTION}
             data={data_english}
           />
         </Box>
