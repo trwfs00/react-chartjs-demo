@@ -14,18 +14,22 @@ import zoomPlugin from "chartjs-plugin-zoom"
 import {
   Box,
   Button,
+  ButtonGroup,
   Container,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
   Stack,
+  Typography,
 } from "@mui/material"
 import ChartBox from "./components/ChartBox/ChartBox"
 import "chartjs-plugin-zoom"
 import chartOption from "./utils/constraint/chartOption"
-import { data_english } from "./utils/constraint/dataset"
+import { data_sealed_reverse } from "./utils/constraint/dataset"
 import { useRef, useState } from "react"
+import CustomLegend from "./components/CustomLegend/CustomLegend"
+import LineChart from "./components/SealedReverse/LineChart"
 
 ChartJS.register(
   CategoryScale,
@@ -40,58 +44,31 @@ ChartJS.register(
 
 function App() {
   const chartRef = useRef(null)
-  const [chartSize, setChartSize] = useState(null)
+  const [chartSize, setChartSize] = useState("All")
   const handleResetZoom = () => {
     if (chartRef.current) {
       chartRef.current.resetZoom()
     }
   }
 
-  const handleChange = event => {
-    setChartSize(event.target.value)
-    if (chartRef.current) {
-      chartRef.current.zoomScale(
-        "x",
-        { min: 0, max: event.target.value },
-        "default"
-      )
+  const handleChange = e => {
+    let size = e.target.value
+    if (size) {
+      setChartSize(size)
+      if (chartRef.current && Number.isInteger(size)) {
+        chartRef.current.zoomScale("x", { min: 0, max: size }, "default")
+      }
     }
     console.log(chartRef.current.getZoomLevel())
   }
 
   return (
     <Container maxWidth='xl' className='App'>
-      <ChartBox title='English - Forward'>
-        <Box sx={{ width: 800, height: 450 }}>
-          <Line
-            ref={chartRef}
-            options={chartOption.ENGLISH_OPTION}
-            data={data_english}
-          />
-        </Box>
-        <Stack direction='row' spacing={2}>
-          <FormControl fullWidth>
-            <InputLabel id='select-graph-size-label'>ขนาดกราฟ</InputLabel>
-            <Select
-              labelId='select-graph-size-label'
-              value={chartSize}
-              size='small'
-              label='ขนาด'
-              onChange={handleChange}
-            >
-              <MenuItem value={5}>5</MenuItem>
-              <MenuItem value={10}>10</MenuItem>
-              <MenuItem value={15}>15</MenuItem>
-              <MenuItem value={20}>20</MenuItem>
-              <MenuItem value={25}>25</MenuItem>
-              <MenuItem value={30}>30</MenuItem>
-            </Select>
-          </FormControl>
-          <Button variant='contained' onClick={handleResetZoom}>
-            Reset
-          </Button>
-        </Stack>
-      </ChartBox>
+      <LineChart
+        title='Sealed - Reverse'
+        dataset={data_sealed_reverse(10)}
+        option={chartOption.zoomOption}
+      />
     </Container>
   )
 }
