@@ -27,7 +27,7 @@ const LineChart = ({ title, dataset, option, auctionType }) => {
 
   return (
     <ChartBox title={title}>
-        <Box sx={{ width: "auto", height: 450 }}>
+        <Box sx={{ minWidth: 900, width: 'auto', height: 450 }}>
           <Line
             ref={chartRef}
             options={option}

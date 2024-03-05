@@ -26,7 +26,7 @@ import {
 import ChartBox from "./components/ChartBox/ChartBox"
 import "chartjs-plugin-zoom"
 import chartOption from "./utils/constraint/chartOption"
-import { data_sealed_reverse } from "./utils/constraint/dataset"
+import { data_english, data_sealed_reverse } from "./utils/constraint/dataset"
 import { useRef, useState } from "react"
 import CustomLegend from "./components/CustomLegend/CustomLegend"
 import LineChart from "./components/SealedReverse/LineChart"
@@ -64,11 +64,18 @@ function App() {
 
   return (
     <Container maxWidth='xl' className='App'>
-      <LineChart
-        title='Sealed - Reverse'
-        dataset={data_sealed_reverse(10)}
-        option={chartOption.zoomOption}
-      />
+      <Stack direction='column' alignItems='center' spacing={4}>
+        <LineChart
+          title='Sealed - Reverse'
+          dataset={data_sealed_reverse(10)}
+          option={chartOption.zoomOption}
+        />
+        <LineChart
+          title='English - Forward'
+          dataset={data_english(10)}
+          option={chartOption.ENGLISH_OPTION}
+        />
+      </Stack>
     </Container>
   )
 }

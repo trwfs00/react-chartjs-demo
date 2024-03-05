@@ -101,21 +101,29 @@ dataset.forEach(item => {
 console.log(company)
 console.log(bid)
 
-export const data_english = {
-  labels,
-  datasets: [
-    {
-      label: "1 บวก 2 พี่น้องกัน จำกัด",
-      data: bid,
-      // borderColor: ["rgb(11, 78, 128)","rgb(255, 255, 132)"],
-      backgroundColor: ["rgb(11, 78, 128)", "rgb(255, 255, 132)"],
-      borderColor: "rgb(0,0,0)",
-      pointRadius: 5,
-      borderWidth: 1.2,
-      drawBorder: false,
-      pointBorderColor: ["rgb(11, 78, 128)", "rgb(255, 255, 132)"],
-    },
-  ],
+export const data_english = label => {
+  let viewPort
+  if (Number.isInteger(label) && label > 10) {
+    viewPort = Array.from({ length: label + 1 }, (_, index) => index.toString())
+  } else if (Number.isInteger(label) && label <= 10) {
+    viewPort = Array.from({ length: 11 }, (_, index) => index.toString())
+  }
+  return {
+    labels: viewPort,
+    datasets: [
+      {
+        label: "1 บวก 2 พี่น้องกัน จำกัด",
+        data: [ null, ...bid],
+        // borderColor: ["rgb(11, 78, 128)","rgb(255, 255, 132)"],
+        backgroundColor: ["rgb(11, 78, 128)", "rgb(255, 255, 132)"],
+        borderColor: "rgb(0,0,0)",
+        pointRadius: 5,
+        borderWidth: 1.2,
+        drawBorder: false,
+        pointBorderColor: ["rgb(11, 78, 128)", "rgb(255, 255, 132)"],
+      },
+    ],
+  }
 }
 
 export const reverse_auto_generate = {
@@ -158,11 +166,11 @@ export const data_sealed_reverse = label => {
         label: "1 เฮลท์แคร์ จำกัด",
         data: [null, 1500000, 1400000, 1300000, 1100000, 900000],
         fill: false,
-        pointRadius: 5,
+        pointRadius: 7,
         borderWidth: 1.8,
         drawBorder: false,
         borderColor: "#0B4E80",
-        pointBorderColor: "#0B4E80",
+        pointBorderColor: "#fff",
         pointBackgroundColor: "#0B4E80",
         backgroundColor: "#0B4E80",
       },
@@ -170,11 +178,11 @@ export const data_sealed_reverse = label => {
         label: "1 บวก 2 พี่น้องกัน จำกัด",
         data: [null, 1450000, 1200000, 950000],
         fill: false,
-        pointRadius: 5,
+        pointRadius: 7,
         borderWidth: 1.8,
         drawBorder: false,
         borderColor: "#16A651",
-        pointBorderColor: "#16A651",
+        pointBorderColor: "#fff",
         pointBackgroundColor: "#16A651",
         backgroundColor: "#16A651",
       },
@@ -183,11 +191,11 @@ export const data_sealed_reverse = label => {
         label: "Praut Company",
         data: [null, 1500000, 1000000],
         fill: false,
-        pointRadius: 5,
+        pointRadius: 7,
         borderWidth: 1.8,
         drawBorder: false,
         borderColor: "#FED500",
-        pointBorderColor: "#FED500",
+        pointBorderColor: "#fff",
         pointBackgroundColor: "#FED500",
         backgroundColor: "#FED500",
       },
