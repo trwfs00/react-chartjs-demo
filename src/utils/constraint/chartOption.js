@@ -1,4 +1,5 @@
 let delayed
+const BORDER = true
 const chartOption = {
   zoomOption: {
     responsive: true,
@@ -14,13 +15,81 @@ const chartOption = {
         return delay
       },
     },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: "BIDDING NO.",
+          color: "#0B4E80",
+          font: {
+            size: 14,
+            weight: "600",
+          },
+        },
+        ticks: {
+          font: {
+            size: 14,
+            weight: "400",
+          },
+          color: "#0B4E80",
+        },
+        border: {
+          display: BORDER,
+          color: "#000000",
+          width: 2,
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: "TOTAL BIDDING (THB)",
+          color: "#0B4E80",
+          font: {
+            size: 14,
+            weight: "600",
+          },
+        },
+        ticks: {
+          //   callback: function (val, index) {
+          //     // Hide every 2nd tick label
+          //     return index % 2 === 0 ? this.getLabelForValue(val) : ""
+          //   },
+          font: {
+            size: 14,
+            weight: "400",
+          },
+          color: "#0B4E80",
+        },
+        border: {
+          display: BORDER,
+          color: "#000000",
+          width: 2,
+        },
+      },
+    },
     plugins: {
       legend: {
-        position: "top",
+        display: false,
+        align: "start",
+        position: "bottom",
+        fullSize: false,
+        labels: {
+          pointStyle: "circle",
+          usePointStyle: true,
+          pointStyleWidth: 16,
+          borderRadius: 8,
+          useBorderRadius: true,
+          padding: 12,
+          color: "#0B4E80",
+          font: {
+            size: 12,
+            weight: "500",
+          }
+        },
       },
       title: {
-        display: true,
-        text: "AUCTION - ENGLISH",
+        display: false,
+        text: "AUCTION - SEALED",
       },
       zoom: {
         pan: {
