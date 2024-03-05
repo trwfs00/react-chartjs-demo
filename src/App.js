@@ -26,8 +26,10 @@ import {
 import ChartBox from "./components/ChartBox/ChartBox"
 import "chartjs-plugin-zoom"
 import chartOption from "./utils/constraint/chartOption"
-import { data_english } from "./utils/constraint/dataset"
+import { data_sealed_reverse } from "./utils/constraint/dataset"
 import { useRef, useState } from "react"
+import CustomLegend from "./components/CustomLegend/CustomLegend"
+import LineChart from "./components/SealedReverse/LineChart"
 
 ChartJS.register(
   CategoryScale,
@@ -42,54 +44,31 @@ ChartJS.register(
 
 function App() {
   const chartRef = useRef(null)
-  const [chartSize, setChartSize] = useState(null)
+  const [chartSize, setChartSize] = useState("All")
   const handleResetZoom = () => {
     if (chartRef.current) {
       chartRef.current.resetZoom()
     }
   }
 
-  const handleChange = size => {
-    setChartSize(size)
-    if (chartRef.current) {
-      chartRef.current.zoomScale("x", { min: 0, max: size }, "default")
+  const handleChange = e => {
+    let size = e.target.value
+    if (size) {
+      setChartSize(size)
+      if (chartRef.current && Number.isInteger(size)) {
+        chartRef.current.zoomScale("x", { min: 0, max: size }, "default")
+      }
     }
     console.log(chartRef.current.getZoomLevel())
   }
 
   return (
     <Container maxWidth='xl' className='App'>
-      <ChartBox title='Sealed - Reverse'>
-        <Box sx={{ width: 800, height: 420 }}>
-          <Line
-            ref={chartRef}
-            options={chartOption.zoomOption}
-            data={data_english}
-          />
-        </Box>
-        <Stack direction='row' spacing={2} ml={5} mr={1} my={4}>
-          <FormControl fullWidth>
-            <ButtonGroup size='medium' aria-label='Graph Size' disableElevation>
-              {[5, 10, 15, 20, 25, 30].map(size => (
-                <Button
-                  key={size}
-                  variant={chartSize === size ? "contained" : "outlined"}
-                  onClick={() => handleChange(size)}
-                >
-                  {size}
-                </Button>
-              ))}
-            </ButtonGroup>
-          </FormControl>
-          <Button
-            disableElevation
-            variant='contained'
-            onClick={handleResetZoom}
-          >
-            Reset
-          </Button>
-        </Stack>
-      </ChartBox>
+      <LineChart
+        title='Sealed - Reverse'
+        dataset={data_sealed_reverse(10)}
+        option={chartOption.zoomOption}
+      />
     </Container>
   )
 }

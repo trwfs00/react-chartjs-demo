@@ -69,7 +69,7 @@ const chartOption = {
     },
     plugins: {
       legend: {
-        display: true,
+        display: false,
         align: "start",
         position: "bottom",
         fullSize: false,
@@ -79,10 +79,16 @@ const chartOption = {
           pointStyleWidth: 16,
           borderRadius: 8,
           useBorderRadius: true,
+          padding: 12,
+          color: "#0B4E80",
+          font: {
+            size: 12,
+            weight: "500",
+          }
         },
       },
       title: {
-        display: true,
+        display: false,
         text: "AUCTION - SEALED",
       },
       zoom: {
