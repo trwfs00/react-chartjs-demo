@@ -34,61 +34,66 @@ const labels = [
     "30",
   ]
 
-  const company = []
-  const bid = []
-
   const dataset = [
     {
       companyname:'1 เฮลท์แคร์ จำกัด',
-      bid:1500000
+      bid:1500000,
+      color:'rgb(11, 78, 128)'
     },
     {
       companyname:'1 บวก 2 พี่น้องกัน จำกัด',
-      bid:1550000
+      bid:1550000,
+      color:'rgb(255, 255, 132)'
     },
     {
       companyname:'Praut Company',
-      bid:1600000
+      bid:1600000,
+      color:"rgb(255, 99, 132)"
+      
     },
     {
       companyname:'1 เฮลท์แคร์ จำกัด',
-      bid:1650000
+      bid:1650000,
+      color:'rgb(11, 78, 128)'
+
     },
     {
       companyname:'1 เฮลท์แคร์ จำกัด',
-      bid:1700000
+      bid:1700000,
+      color:'rgb(11, 78, 128)'
     },
     {
       companyname:'1 บวก 2 พี่น้องกัน จำกัด',
-      bid:1701000
+      bid:1701000,
+      color:'rgb(255, 255, 132)'
+
     },
     {
       companyname:'1 เฮลท์แคร์ จำกัด',
-      bid:1750000
+      bid:1750000,
+      color:'rgb(11, 78, 128)'
+
     },
     {
       companyname:'Praut Company',
-      bid:1800000
+      bid:1800000,
+      color:"rgb(255, 99, 132)"
     },
     {
       companyname:'1 บวก 2 พี่น้องกัน จำกัด',
-      bid:1850000
+      bid:1850000,
+      color:'rgb(255, 255, 132)'
     },
     {
       companyname:'1 เฮลท์แคร์ จำกัด',
-      bid:1900000
+      bid:1900000,
+      color:'rgb(11, 78, 128)'
     },
   ]
 
+  const bid = [...dataset.bid]
+  const color = [...dataset.color]
 
-
-  dataset.forEach(item => {
-    // company.push(item.companyname);
-    bid.push(item.bid);
-  });
-
-  console.log(company)
-  console.log(bid)
 
 export const data_english = {
     labels,
@@ -96,13 +101,12 @@ export const data_english = {
       {
         label: '1 บวก 2 พี่น้องกัน จำกัด',
         data: bid,
-        // borderColor: ["rgb(11, 78, 128)","rgb(255, 255, 132)"],
-        backgroundColor: ["rgb(11, 78, 128)","rgb(255, 255, 132)"],
+        backgroundColor: color,
         borderColor: "rgb(0,0,0)",
         pointRadius: 5,
         borderWidth: 1.2,
         drawBorder: false,
-        pointBorderColor: ["rgb(11, 78, 128)","rgb(255, 255, 132)"],
+        pointBorderColor: color,
       }
     ],
   }
