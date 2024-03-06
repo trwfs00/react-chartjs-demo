@@ -47,55 +47,67 @@ const labels = [
   "30",
 ]
 
-const company = []
+const color = []
 const bid = []
+const company = []
 
 const dataset = [
+  {},
   {
     companyname: "1 เฮลท์แคร์ จำกัด",
+    color: "#0B4E80",
     bid: 1500000,
   },
   {
     companyname: "1 บวก 2 พี่น้องกัน จำกัด",
+    color: "#16A651",
     bid: 1550000,
   },
   {
     companyname: "Praut Company",
+    color: "#FED500",
     bid: 1600000,
   },
   {
     companyname: "1 เฮลท์แคร์ จำกัด",
+    color: "#0B4E80",
     bid: 1650000,
   },
   {
     companyname: "1 เฮลท์แคร์ จำกัด",
+    color: "#0B4E80",
     bid: 1700000,
   },
   {
     companyname: "1 บวก 2 พี่น้องกัน จำกัด",
+    color: "#16A651",
     bid: 1701000,
   },
   {
     companyname: "1 เฮลท์แคร์ จำกัด",
+    color: "#0B4E80",
     bid: 1750000,
   },
   {
     companyname: "Praut Company",
+    color: "#FED500",
     bid: 1800000,
   },
   {
     companyname: "1 บวก 2 พี่น้องกัน จำกัด",
+    color: "#16A651",
     bid: 1850000,
   },
   {
     companyname: "1 เฮลท์แคร์ จำกัด",
+    color: "#0B4E80",
     bid: 1900000,
   },
 ]
 
 dataset.forEach(item => {
-  // company.push(item.companyname);
   bid.push(item.bid)
+  color.push(item.color)
 })
 
 console.log(company)
@@ -113,14 +125,13 @@ export const data_english = label => {
     datasets: [
       {
         label: "1 บวก 2 พี่น้องกัน จำกัด",
-        data: [ null, ...bid],
-        // borderColor: ["rgb(11, 78, 128)","rgb(255, 255, 132)"],
-        backgroundColor: ["rgb(11, 78, 128)", "rgb(255, 255, 132)"],
+        data: bid,
+        pointBackgroundColor: color,
         borderColor: "rgb(0,0,0)",
-        pointRadius: 5,
-        borderWidth: 1.2,
+        pointRadius: 7,
+        borderWidth: 1.8,
         drawBorder: false,
-        pointBorderColor: ["rgb(11, 78, 128)", "rgb(255, 255, 132)"],
+        pointBorderColor: '#fff',
       },
     ],
   }

@@ -3,8 +3,25 @@ import ChartBox from '../ChartBox/ChartBox'
 import { Box, FormControl, MenuItem, Select, Stack, Typography } from '@mui/material'
 import { Line } from 'react-chartjs-2'
 import CustomLegend from '../CustomLegend/CustomLegend'
+import chartOption from '../../utils/constraint/chartOption'
 
-const LineChart = ({ title, dataset, option, auctionType }) => {
+const renderOption = ({ auctionType }) => {
+  if (auctionType === 1) {
+    return chartOption.ENGLISH_OPTION
+  } else {
+    return chartOption.SEALED_OPTION
+  }
+}
+
+const renderBidHistory = ({ bidHistory, auctionType, viewPort }) => {
+  if (auctionType === 1) {
+    return chartOption.ENGLISH_BID_HISTORY
+  } else {
+    return chartOption.SEALED_BID_HISTORY
+  }
+}
+
+const AuctionChart = ({ title, bidHistory, auctionType }) => {
   const chartRef = useRef(null)
   const [chartSize, setChartSize] = useState("All")
 
@@ -24,14 +41,14 @@ const LineChart = ({ title, dataset, option, auctionType }) => {
     }
     console.log(chartRef.current.getZoomLevel())
   }
-
+  
   return (
     <ChartBox title={title}>
         <Box sx={{ minWidth: 900, width: 'auto', height: 450 }}>
           <Line
             ref={chartRef}
-            options={option}
-            data={dataset}
+            options={renderOption(auctionType)}
+            data={bidHistory}
           />
         </Box>
         <Stack
@@ -43,7 +60,7 @@ const LineChart = ({ title, dataset, option, auctionType }) => {
           mr={1}
           my={4}
         >
-          <CustomLegend data={dataset} />
+          <CustomLegend data={bidHistory} />
           <Stack direction='row' alignItems='center' spacing={2}>
             <Typography
               variant='subtitle1'
@@ -74,4 +91,4 @@ const LineChart = ({ title, dataset, option, auctionType }) => {
   )
 }
 
-export default LineChart
+export default AuctionChart

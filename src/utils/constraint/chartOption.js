@@ -1,7 +1,7 @@
 let delayed
 const BORDER = true
 const chartOption = {
-  zoomOption: {
+  SEALED_OPTION: {
     responsive: true,
     animation: {
       onComplete: () => {
@@ -50,10 +50,6 @@ const chartOption = {
           },
         },
         ticks: {
-          //   callback: function (val, index) {
-          //     // Hide every 2nd tick label
-          //     return index % 2 === 0 ? this.getLabelForValue(val) : ""
-          //   },
           font: {
             size: 14,
             weight: "400",
@@ -115,7 +111,7 @@ const chartOption = {
         titleAlign: 'left',
         titleSpacing: 2,
         bodyColor: '#fff',
-        bodyFont: {}, // Customize font properties
+        bodyFont: { weight: 'bold' }, // Customize font properties
         bodyAlign: 'left',
         bodySpacing: 2,
         footerColor: '#fff',
@@ -131,7 +127,8 @@ const chartOption = {
           },
           label: (context) => {
             let label = context.dataset.label || '';
-            return label;
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            return `${label} - ${time}`;
           },
           labelPointStyle: () => {
             return {
@@ -197,10 +194,6 @@ const chartOption = {
           },
         },
         ticks: {
-          //   callback: function (val, index) {
-          //     // Hide every 2nd tick label
-          //     return index % 2 === 0 ? this.getLabelForValue(val) : ""
-          //   },
           font: {
             size: 14,
             weight: "400",
@@ -236,7 +229,7 @@ const chartOption = {
       },
       title: {
         display: false,
-        text: "AUCTION - SEALED",
+        text: "AUCTION - ENGLISH",
       },
       zoom: {
         pan: {

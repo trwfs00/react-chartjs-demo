@@ -1,0 +1,82 @@
+[
+    {
+        "detail": {
+            "id": "4c9394c7-7c0c-433c-8607-99cd02a3e87a",
+            "auction_id": "4d66cf49-64f2-4081-8ff4-c5a6ec9093f8",
+            "supplier_id": 1486,
+            "bidding_amount": 1200000,
+            "bidding_time": "2024-02-22T02:28:19.554Z",
+            "selected": true,
+            "accepted": false,
+            "company_name": "ส.สุ ผลิตภัณฑ์ จำกัด"
+        },
+        "items": [
+            {
+                "id": "84d09403-611e-4c97-9317-c4df21ad824c",
+                "auction_bidding_id": "4c9394c7-7c0c-433c-8607-99cd02a3e87a",
+                "no": 1,
+                "name": "item 1",
+                "description": "",
+                "qty": 1,
+                "uom_id": "b5d741b7-5106-4838-9ceb-c3c0e3c69276",
+                "uom": "EA",
+                "unit_price": 1000000,
+                "total_price": 1000000,
+                "auction_item_id": "e54f4cb0-1aa0-4994-a600-6e4e9dab8b17"
+            },
+            {
+                "id": "73ebe990-7f7b-40ba-9421-5991e5a72d4d",
+                "auction_bidding_id": "4c9394c7-7c0c-433c-8607-99cd02a3e87a",
+                "no": 2,
+                "name": "item 2",
+                "description": "",
+                "qty": 2,
+                "uom_id": "b5d741b7-5106-4838-9ceb-c3c0e3c69276",
+                "uom": "EA",
+                "unit_price": 100000,
+                "total_price": 200000,
+                "auction_item_id": "2f75d134-a3fc-4002-9ae7-e7577aae0f65"
+            }
+        ]
+    },
+    {
+        "detail": {
+            "id": "3dde5b88-ab56-4db9-b034-7d72c6332a55",
+            "auction_id": "4d66cf49-64f2-4081-8ff4-c5a6ec9093f8",
+            "supplier_id": 1489,
+            "bidding_amount": 1400000,
+            "bidding_time": "2024-02-22T02:27:45.255Z",
+            "selected": false,
+            "accepted": false,
+            "company_name": "ABBA Intertrade"
+        },
+        "items": [
+            {
+                "id": "f2b52a12-0e5d-415d-8d45-552c1d3a2088",
+                "auction_bidding_id": "3dde5b88-ab56-4db9-b034-7d72c6332a55",
+                "no": 1,
+                "name": "item 1",
+                "description": "",
+                "qty": 1,
+                "uom_id": "b5d741b7-5106-4838-9ceb-c3c0e3c69276",
+                "uom": "EA",
+                "unit_price": 1000000,
+                "total_price": 1000000,
+                "auction_item_id": "e54f4cb0-1aa0-4994-a600-6e4e9dab8b17"
+            },
+            {
+                "id": "2d02381b-c4c8-4fe2-85ec-3edf9ef4dd6d",
+                "auction_bidding_id": "3dde5b88-ab56-4db9-b034-7d72c6332a55",
+                "no": 2,
+                "name": "item 2",
+                "description": "",
+                "qty": 2,
+                "uom_id": "b5d741b7-5106-4838-9ceb-c3c0e3c69276",
+                "uom": "EA",
+                "unit_price": 200000,
+                "total_price": 400000,
+                "auction_item_id": "2f75d134-a3fc-4002-9ae7-e7577aae0f65"
+            }
+        ]
+    }
+]
