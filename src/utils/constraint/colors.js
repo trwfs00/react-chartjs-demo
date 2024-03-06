@@ -1,7 +1,7 @@
 export const colors = [
     { id: 0, name: "Color1", hex: "#0B4E80" },
-    { id: 1, name: "Color2", hex: "#FF5733" },
-    { id: 2, name: "Color3", hex: "#33FF57" },
+    { id: 1, name: "Color2", hex: "#16A651" },
+    { id: 2, name: "Color3", hex: "#FED500" },
     { id: 3, name: "Color4", hex: "#5733FF" },
     { id: 4, name: "Color5", hex: "#FF33E6" },
     { id: 5, name: "Color6", hex: "#E6FF33" },

@@ -9,15 +9,13 @@ import {
   Tooltip,
   Legend,
 } from "chart.js"
-import { Line } from "react-chartjs-2"
 import zoomPlugin from "chartjs-plugin-zoom"
-import { Box, Container, Stack } from "@mui/material"
+import { Container, Stack } from "@mui/material"
 import "chartjs-plugin-zoom"
 import { data_english, data_sealed_reverse } from "./utils/constraint/dataset"
 import { colors } from './utils/constraint/colors'
 import AuctionChart from "./components/SealedReverse/AuctionChart"
-import ChartTest from "./components/test"
-import CustomLegendChart from "./components/test"
+
 
 const english_revert = require('./utils/english_revert.json')
 
