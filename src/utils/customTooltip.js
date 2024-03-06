@@ -9,7 +9,7 @@ export const getOrCreateTooltip = chart => {
     tooltipEl.style.opacity = 1
     tooltipEl.style.pointerEvents = "none"
     tooltipEl.style.position = "absolute"
-    tooltipEl.style.transform = "translate(10%, -50%)"
+    tooltipEl.style.transform = "translate(15%, -50%)"
     tooltipEl.style.transition = "all .1s ease"
 
     const table = document.createElement("table")
@@ -19,9 +19,11 @@ export const getOrCreateTooltip = chart => {
     caret.style.height = "20px"
     caret.style.width = "20px"
     caret.style.backgroundColor = "rgba(11, 78, 128, 0.9)"
-    caret.style.clipPath = "polygon(50% 0%, 50% 50%, 50% 100%, 0% 50%)"
+    caret.style.borderRadius = "4px"
+    caret.style.rotate = "-45deg"
+    caret.style.clipPath = "polygon(0 0, 100% 0, 100% 0, 0 100%)"
     caret.style.top = "50%"
-    caret.style.transform = "translate(-80%, -50%)"
+    caret.style.transform = "translate(-20%, -90%)"
     caret.style.position = "absolute"
 
     tooltipEl.appendChild(caret)

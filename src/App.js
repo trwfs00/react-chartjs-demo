@@ -154,10 +154,8 @@ function App() {
           title='Sealed - Reverse'
           bidHistory={data_sealed_reverse(10)}
           auctionType={2}
+          reservedPrice={1000000}
         />
-        <Box sx={{ width: 900, height: 450 }}>
-          <Line data={computeDataEnglish(english_revert)} options={legendOptions} />
-        </Box>
       </Stack>
     </Container>
   )

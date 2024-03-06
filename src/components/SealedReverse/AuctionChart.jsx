@@ -11,24 +11,13 @@ import {
 import { Line } from "react-chartjs-2"
 import CustomLegend from "../CustomLegend/CustomLegend"
 import chartOption from "../../utils/constraint/chartOption"
+import options from "../../utils/constraint/chartOption"
 
-const renderOption = auctionType => {
-  if (auctionType === 1) {
-    return chartOption.SEALED_OPTION
-  } else if (auctionType === 2) {
-    return chartOption.SEALED_OPTION
-  }
+const renderOption = (reservedPrice) => {
+  return options(reservedPrice)
 }
 
-const renderBidHistory = ({ bidHistory, auctionType, viewPort }) => {
-  if (auctionType === 1) {
-    return chartOption.ENGLISH_BID_HISTORY
-  } else {
-    return chartOption.SEALED_BID_HISTORY
-  }
-}
-
-const AuctionChart = ({ title, bidHistory, auctionType }) => {
+const AuctionChart = ({ title, bidHistory, auctionType, reservedPrice }) => {
   const chartRef = useRef(null)
   const [chartSize, setChartSize] = useState("All")
   const [selectedSupplier, setSelectedSupplier] = useState(-1)
@@ -69,13 +58,37 @@ const AuctionChart = ({ title, bidHistory, auctionType }) => {
     }
   }
 
+  const renderLabels = () => {
+    const datasets = bidHistory.datasets
+    console.log(datasets)
+    const longest = datasets.reduce(
+      (maxDataset, currentDataset) =>
+        currentDataset.data.length > maxDataset.data.length ? currentDataset : maxDataset,
+      datasets[0]
+    );
+    console.log(longest)
+
+    if (chartSize === "All") {
+      if (longest.data.length <= 10) {
+        return { labels: Array.from({ length: 11 }, (_, index) => index.toString()) }
+      }
+      return { labels: Array.from({ length: longest.data.length + 1 }, (_, index) => index.toString()) }
+    }
+
+    if (Number.isInteger(chartSize)) {
+      return { labels: Array.from({ length: chartSize + 1 }, (_, index) => index.toString()) }
+    } else {
+      return { labels: Array.from({ length: 11 }, (_, index) => index.toString()) }
+    }
+  }
+
   return (
     <ChartBox title={title}>
       <Box sx={{ minWidth: 900, width: "auto", height: 450 }}>
         <Line
           ref={chartRef}
-          options={renderOption(auctionType)}
-          data={selectedSupplier !== -1 ? filteredData : bidHistory}
+          options={renderOption(reservedPrice)}
+          data={selectedSupplier !== -1 ? { ...filteredData, labels: renderLabels().labels } : { ...bidHistory, labels: renderLabels().labels }}
         />
       </Box>
       <Stack
@@ -114,11 +127,11 @@ const AuctionChart = ({ title, bidHistory, auctionType }) => {
               <MenuItem value='All' onClick={handleResetZoom}>
                 All
               </MenuItem>
-              <MenuItem value={10}>10</MenuItem>
-              <MenuItem value={15}>15</MenuItem>
-              <MenuItem value={20}>20</MenuItem>
-              <MenuItem value={25}>25</MenuItem>
-              <MenuItem value={30}>30</MenuItem>
+              <MenuItem value={10}>0-10</MenuItem>
+              <MenuItem value={25}>0-25</MenuItem>
+              <MenuItem value={50}>0-50</MenuItem>
+              <MenuItem value={75}>0-75</MenuItem>
+              <MenuItem value={100}>0-100</MenuItem>
             </Select>
           </FormControl>
         </Stack>
