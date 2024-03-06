@@ -211,8 +211,8 @@ export const data_sealed_reverse = label => {
         data: [null, 1450000, 1200000, 950000],
         date: [
           null,
-          new Date("01/18/2024"),
-          new Date("01/19/2024"),
+          new Date("2024-02-22T02:28:19.554Z"),
+          new Date("2024-02-22T02:27:45.255Z"),
           new Date("01/20/2024"),
         ],
         fill: false,
