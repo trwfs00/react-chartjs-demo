@@ -1,0 +1,330 @@
+{
+    "code": 0,
+    "status": "success",
+    "message": {
+        "en": "",
+        "th": ""
+    },
+    "result": [
+        {
+            "detail": {
+                "id": "ba58b59d-936f-4212-a7d0-3daf0e1b4788",
+                "auction_id": "07282ef4-2222-4c4a-9bb6-8e506bd7020f",
+                "supplier_id": 1346,
+                "bidding_amount": 460000,
+                "bidding_time": "2024-01-31T10:03:04.802+07:00",
+                "selected": true,
+                "accepted": false,
+                "company_name": "1 บวก 2 พี่น้องกัน จำกัด"
+            },
+            "items": [
+                {
+                    "id": "b63bc77b-53dc-4e78-bfd8-b917a59a9b74",
+                    "auction_bidding_id": "ba58b59d-936f-4212-a7d0-3daf0e1b4788",
+                    "no": 1,
+                    "name": "t1",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 230,
+                    "total_price": 230000,
+                    "auction_item_id": "69983a40-ed52-4671-b79b-5f68bd806770"
+                },
+                {
+                    "id": "32e7d5f2-011d-4acf-970a-5d25c78a95f6",
+                    "auction_bidding_id": "ba58b59d-936f-4212-a7d0-3daf0e1b4788",
+                    "no": 2,
+                    "name": "t2",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 230,
+                    "total_price": 230000,
+                    "auction_item_id": "cf01c413-119d-4f8e-a2b8-5cb9f14df50b"
+                }
+            ]
+        },
+        {
+            "detail": {
+                "id": "c10360a4-e910-42c3-b8a6-d8647f8f67ef",
+                "auction_id": "07282ef4-2222-4c4a-9bb6-8e506bd7020f",
+                "supplier_id": 1346,
+                "bidding_amount": 400000,
+                "bidding_time": "2024-01-31T10:02:02.764+07:00",
+                "selected": false,
+                "accepted": false,
+                "company_name": "1 บวก 2 พี่น้องกัน จำกัด"
+            },
+            "items": [
+                {
+                    "id": "3d369915-ff0b-4e29-852d-fe9e24b7eb53",
+                    "auction_bidding_id": "c10360a4-e910-42c3-b8a6-d8647f8f67ef",
+                    "no": 1,
+                    "name": "t1",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 200,
+                    "total_price": 200000,
+                    "auction_item_id": "69983a40-ed52-4671-b79b-5f68bd806770"
+                },
+                {
+                    "id": "7c0ea062-39df-4ab8-b73b-129d4604db59",
+                    "auction_bidding_id": "c10360a4-e910-42c3-b8a6-d8647f8f67ef",
+                    "no": 2,
+                    "name": "t2",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 200,
+                    "total_price": 200000,
+                    "auction_item_id": "cf01c413-119d-4f8e-a2b8-5cb9f14df50b"
+                }
+            ]
+        },
+        {
+            "detail": {
+                "id": "e939c73b-2084-4f38-bb66-55efc0a9419d",
+                "auction_id": "07282ef4-2222-4c4a-9bb6-8e506bd7020f",
+                "supplier_id": 2,
+                "bidding_amount": 400000,
+                "bidding_time": "2024-01-31T10:01:49.6+07:00",
+                "selected": false,
+                "accepted": false,
+                "company_name": "Anguilla"
+            },
+            "items": [
+                {
+                    "id": "ffaffca5-d082-412a-9c33-be0adf71ae86",
+                    "auction_bidding_id": "e939c73b-2084-4f38-bb66-55efc0a9419d",
+                    "no": 1,
+                    "name": "t1",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 200,
+                    "total_price": 200000,
+                    "auction_item_id": "69983a40-ed52-4671-b79b-5f68bd806770"
+                },
+                {
+                    "id": "44e09a9d-06f3-418e-b89d-149bda8b0868",
+                    "auction_bidding_id": "e939c73b-2084-4f38-bb66-55efc0a9419d",
+                    "no": 2,
+                    "name": "t2",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 200,
+                    "total_price": 200000,
+                    "auction_item_id": "cf01c413-119d-4f8e-a2b8-5cb9f14df50b"
+                }
+            ]
+        },
+        {
+            "detail": {
+                "id": "655fbe22-5d11-4ea2-8bc2-ef4b7d3c82e3",
+                "auction_id": "07282ef4-2222-4c4a-9bb6-8e506bd7020f",
+                "supplier_id": 2,
+                "bidding_amount": 360000,
+                "bidding_time": "2024-01-31T10:01:32.565+07:00",
+                "selected": false,
+                "accepted": false,
+                "company_name": "Anguilla"
+            },
+            "items": [
+                {
+                    "id": "3b54da9c-753b-4e63-b528-3b51bb09dec2",
+                    "auction_bidding_id": "655fbe22-5d11-4ea2-8bc2-ef4b7d3c82e3",
+                    "no": 1,
+                    "name": "t1",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 180,
+                    "total_price": 180000,
+                    "auction_item_id": "69983a40-ed52-4671-b79b-5f68bd806770"
+                },
+                {
+                    "id": "c7369cd1-945c-437e-a784-9ffc45f3e84d",
+                    "auction_bidding_id": "655fbe22-5d11-4ea2-8bc2-ef4b7d3c82e3",
+                    "no": 2,
+                    "name": "t2",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 180,
+                    "total_price": 180000,
+                    "auction_item_id": "cf01c413-119d-4f8e-a2b8-5cb9f14df50b"
+                }
+            ]
+        },
+        {
+            "detail": {
+                "id": "f32dc270-d403-4802-a1d8-0b77be843ca7",
+                "auction_id": "07282ef4-2222-4c4a-9bb6-8e506bd7020f",
+                "supplier_id": 1346,
+                "bidding_amount": 300000,
+                "bidding_time": "2024-01-31T10:01:15.899+07:00",
+                "selected": false,
+                "accepted": false,
+                "company_name": "1 บวก 2 พี่น้องกัน จำกัด"
+            },
+            "items": [
+                {
+                    "id": "2a95ffbc-f21c-4139-b595-7e515dc5e7f2",
+                    "auction_bidding_id": "f32dc270-d403-4802-a1d8-0b77be843ca7",
+                    "no": 1,
+                    "name": "t1",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 150,
+                    "total_price": 150000,
+                    "auction_item_id": "69983a40-ed52-4671-b79b-5f68bd806770"
+                },
+                {
+                    "id": "61555783-d058-4223-b27f-9c371f1995bf",
+                    "auction_bidding_id": "f32dc270-d403-4802-a1d8-0b77be843ca7",
+                    "no": 2,
+                    "name": "t2",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 150,
+                    "total_price": 150000,
+                    "auction_item_id": "cf01c413-119d-4f8e-a2b8-5cb9f14df50b"
+                }
+            ]
+        },
+        {
+            "detail": {
+                "id": "30fad026-2fb8-43df-9963-bd1e1e0b7f62",
+                "auction_id": "07282ef4-2222-4c4a-9bb6-8e506bd7020f",
+                "supplier_id": 2,
+                "bidding_amount": 160000,
+                "bidding_time": "2024-01-31T10:01:03.604+07:00",
+                "selected": false,
+                "accepted": false,
+                "company_name": "Anguilla"
+            },
+            "items": [
+                {
+                    "id": "1eceaa5d-349e-4486-adf4-acb8b4c935ac",
+                    "auction_bidding_id": "30fad026-2fb8-43df-9963-bd1e1e0b7f62",
+                    "no": 1,
+                    "name": "t1",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 80,
+                    "total_price": 80000,
+                    "auction_item_id": "69983a40-ed52-4671-b79b-5f68bd806770"
+                },
+                {
+                    "id": "7a419722-2c61-476c-acb5-e768713d28b2",
+                    "auction_bidding_id": "30fad026-2fb8-43df-9963-bd1e1e0b7f62",
+                    "no": 2,
+                    "name": "t2",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 80,
+                    "total_price": 80000,
+                    "auction_item_id": "cf01c413-119d-4f8e-a2b8-5cb9f14df50b"
+                }
+            ]
+        },
+        {
+            "detail": {
+                "id": "cb67bac8-bcef-4860-93de-7f2bfffe38a8",
+                "auction_id": "07282ef4-2222-4c4a-9bb6-8e506bd7020f",
+                "supplier_id": 1346,
+                "bidding_amount": 100000,
+                "bidding_time": "2024-01-31T10:00:51.993+07:00",
+                "selected": false,
+                "accepted": false,
+                "company_name": "1 บวก 2 พี่น้องกัน จำกัด"
+            },
+            "items": [
+                {
+                    "id": "bb2bd920-8bc4-47b0-a982-a1d6ed91cc97",
+                    "auction_bidding_id": "cb67bac8-bcef-4860-93de-7f2bfffe38a8",
+                    "no": 1,
+                    "name": "t1",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 50,
+                    "total_price": 50000,
+                    "auction_item_id": "69983a40-ed52-4671-b79b-5f68bd806770"
+                },
+                {
+                    "id": "b78b40b6-e86a-451d-8e92-557cd969db36",
+                    "auction_bidding_id": "cb67bac8-bcef-4860-93de-7f2bfffe38a8",
+                    "no": 2,
+                    "name": "t2",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 50,
+                    "total_price": 50000,
+                    "auction_item_id": "cf01c413-119d-4f8e-a2b8-5cb9f14df50b"
+                }
+            ]
+        },
+        {
+            "detail": {
+                "id": "eb05ebf1-5bfb-4a53-8f9b-ff3a452b115c",
+                "auction_id": "07282ef4-2222-4c4a-9bb6-8e506bd7020f",
+                "supplier_id": 2,
+                "bidding_amount": 40000,
+                "bidding_time": "2024-01-31T10:00:29.74+07:00",
+                "selected": false,
+                "accepted": false,
+                "company_name": "Anguilla"
+            },
+            "items": [
+                {
+                    "id": "b59ee2d2-df22-41d9-a968-5697d7e7e849",
+                    "auction_bidding_id": "eb05ebf1-5bfb-4a53-8f9b-ff3a452b115c",
+                    "no": 1,
+                    "name": "t1",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 20,
+                    "total_price": 20000,
+                    "auction_item_id": "69983a40-ed52-4671-b79b-5f68bd806770"
+                },
+                {
+                    "id": "facb1f35-4d76-4a25-a779-1d9c756eee80",
+                    "auction_bidding_id": "eb05ebf1-5bfb-4a53-8f9b-ff3a452b115c",
+                    "no": 2,
+                    "name": "t2",
+                    "description": "",
+                    "qty": 1000,
+                    "uom_id": "49ebdbb4-1037-44f0-97bb-6fe7ad776223",
+                    "uom": "%",
+                    "unit_price": 20,
+                    "total_price": 20000,
+                    "auction_item_id": "cf01c413-119d-4f8e-a2b8-5cb9f14df50b"
+                }
+            ]
+        }
+    ]
+}

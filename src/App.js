@@ -163,9 +163,16 @@ function App() {
           bidHistory={data_sealed_reverse(10)}
           auctionType={2}
         />
-        <Box sx={{ width: 900, height: 450 }}>
+        <AuctionChart
+          title='English - Reverse'
+          bidHistory={computeDataEnglish(english_revert)}
+          auctionType={1}
+          options={legendOptions}
+        />
+        
+        {/* <Box sx={{ width: 900, height: 450 }}>
           <Line data={computeDataEnglish(english_revert)} options={legendOptions} />
-        </Box>
+        </Box> */}
       </Stack>
     </Container>
   )
