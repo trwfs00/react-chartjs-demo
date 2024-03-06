@@ -166,12 +166,12 @@ const computeDataSealed = (data) => {
 
   Object.entries(companyData).forEach(([key, value], index) => {
     let bids = value.map(item => item.bidding_amount);
-    // let bidDate = value.map(item => Date(item.bidding_time))
-    // console.log(bidDate)
+    let bidDate = value.map(item => new Date(item.bidding_time)); // Format date to MM-DD-YYYY
+    console.log(bidDate)
     result.push({
       label: key,
       data: bids,
-      // date: bidDate,
+      date: bidDate,
       borderColor: colors[index].hex,
       fill: false,
       pointBorderColor: "#fff",
