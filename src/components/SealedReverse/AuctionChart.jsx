@@ -13,7 +13,7 @@ import CustomLegend from "../CustomLegend/CustomLegend"
 import chartOption from "../../utils/constraint/chartOption"
 import options from "../../utils/constraint/chartOption"
 
-const renderOption = (reservedPrice) => {
+const renderOption = reservedPrice => {
   return options(reservedPrice)
 }
 
@@ -63,22 +63,39 @@ const AuctionChart = ({ title, bidHistory, auctionType, reservedPrice }) => {
     console.log(datasets)
     const longest = datasets.reduce(
       (maxDataset, currentDataset) =>
-        currentDataset.data.length > maxDataset.data.length ? currentDataset : maxDataset,
+        currentDataset.data.length > maxDataset.data.length
+          ? currentDataset
+          : maxDataset,
       datasets[0]
-    );
+    )
     console.log(longest)
 
     if (chartSize === "All") {
-      if (longest.data.length <= 10) {
-        return { labels: Array.from({ length: 11 }, (_, index) => index.toString()) }
+      if (longest.data.length < 10) {
+        return {
+          labels: Array.from({ length: 11 }, (_, index) => index.toString()),
+        }
       }
-      return { labels: Array.from({ length: longest.data.length + 1 }, (_, index) => index.toString()) }
+      return {
+        labels: Array.from(
+          {
+            length: longest.data.length + (Boolean(auctionType === 1) ? 0 : 1),
+          },
+          (_, index) => index.toString()
+        ),
+      }
     }
 
     if (Number.isInteger(chartSize)) {
-      return { labels: Array.from({ length: chartSize + 1 }, (_, index) => index.toString()) }
+      return {
+        labels: Array.from({ length: chartSize + 1 }, (_, index) =>
+          index.toString()
+        ),
+      }
     } else {
-      return { labels: Array.from({ length: 11 }, (_, index) => index.toString()) }
+      return {
+        labels: Array.from({ length: 11 }, (_, index) => index.toString()),
+      }
     }
   }
 
@@ -88,7 +105,11 @@ const AuctionChart = ({ title, bidHistory, auctionType, reservedPrice }) => {
         <Line
           ref={chartRef}
           options={renderOption(reservedPrice)}
-          data={selectedSupplier !== -1 ? { ...filteredData, labels: renderLabels().labels } : { ...bidHistory, labels: renderLabels().labels }}
+          data={
+            selectedSupplier !== -1
+              ? { ...filteredData, labels: renderLabels().labels }
+              : { ...bidHistory, labels: renderLabels().labels }
+          }
         />
       </Box>
       <Stack
