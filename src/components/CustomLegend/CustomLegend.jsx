@@ -45,33 +45,36 @@ const CustomLegend = ({ data, onClick, auctionType, selectedSupplier }) => {
         }}
       >
         {data.datasets.map((item, index) => (
-          <span
-            key={index}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              height: "32px",
-              fontWeight: "600",
-              fontFamily: "Prompt, sans-serif",
-              color: "#0B4E80",
-              fontSize: 14,
-            }}
-          >
-            <div
-              style={{
-                width: "12px",
-                height: "12px",
-                backgroundColor: item.pointBackgroundColor,
-                borderWidth: "1px",
-                borderStyle: "solid",
-                borderColor: item.pointBorderColor,
-                borderRadius: "50%",
-                marginRight: "10px",
-              }}
-            ></div>
-            <span>{item.label}</span>
-          </span>
+          <React.Fragment key={index}>
+            {item.label &&
+              <span
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  height: "32px",
+                  fontWeight: "600",
+                  fontFamily: "Prompt, sans-serif",
+                  color: "#0B4E80",
+                  fontSize: 14,
+                }}
+              >
+                <div
+                  style={{
+                    width: "12px",
+                    height: "12px",
+                    backgroundColor: item.pointBackgroundColor,
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: item.pointBorderColor,
+                    borderRadius: "50%",
+                    marginRight: "10px",
+                  }}
+                ></div>
+                <span>{item.label}</span>
+              </span>
+            }
+          </React.Fragment>
         ))}
       </div>
     )
@@ -86,37 +89,41 @@ const CustomLegend = ({ data, onClick, auctionType, selectedSupplier }) => {
         }}
       >
         {data.datasets.map((item, index) => (
-          <Button
-            key={index}
-            onClick={() => handleLegendClick(index)}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              height: "32px",
-              fontWeight: "600",
-              fontFamily: "Prompt, sans-serif",
-              color: "#0B4E80",
-              fontSize: 14,
-              backgroundColor: selectedSupplier === index ? "#0B4E8015" : "transparent",
-              outline: selectedSupplier === index ? "1px solid #0B4E8030" : 'none',
-              opacity: Boolean(selectedSupplier === index || selectedSupplier === -1) ? 1 : 0.6
-            }}
-          >
-            <div
-              style={{
-                width: "12px",
-                height: "12px",
-                backgroundColor: item.pointBackgroundColor,
-                borderWidth: "1px",
-                borderStyle: "solid",
-                borderColor: item.pointBorderColor,
-                borderRadius: "50%",
-                marginRight: "10px",
-              }}
-            ></div>
-            <span>{item.label}</span>
-          </Button>
+          <React.Fragment key={index}>
+            {item.label &&
+              <Button
+                key={index}
+                onClick={() => handleLegendClick(index)}
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  height: "32px",
+                  fontWeight: "600",
+                  fontFamily: "Prompt, sans-serif",
+                  color: "#0B4E80",
+                  fontSize: 14,
+                  backgroundColor: selectedSupplier === index ? "#0B4E8015" : "transparent",
+                  outline: selectedSupplier === index ? "1px solid #0B4E8030" : 'none',
+                  opacity: Boolean(selectedSupplier === index || selectedSupplier === -1) ? 1 : 0.6
+                }}
+              >
+                <div
+                  style={{
+                    width: "12px",
+                    height: "12px",
+                    backgroundColor: item.pointBackgroundColor,
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: item.pointBorderColor,
+                    borderRadius: "50%",
+                    marginRight: "10px",
+                  }}
+                ></div>
+                <span>{item.label}</span>
+              </Button>
+            }
+          </React.Fragment>
         ))}
       </div>
     )
