@@ -94,20 +94,28 @@ const computeDataEnglish = (data) => {
   data.result.forEach(result => {
     const companyName = result.detail.company_name;
     const biddingAmount = result.detail.bidding_amount;
+    const biddingTime = new Date(result.detail.bidding_time).toLocaleDateString('en-US'); // Format bidding time to MM-DD-YYYY
 
     if (!companies[companyName]) {
-      companies[companyName] = Array(data.result.length).fill(null); // Create array with null values
+      companies[companyName] = {
+        biddingAmounts: Array(data.result.length).fill(null), // Create array with null values
+        biddingTimes: Array(data.result.length).fill(null)
+      }
     }
 
     const index  = data.result.length - data.result.indexOf(result) - 1; // Calculate the index from the end
-    companies[companyName][index] = biddingAmount; // Insert the bidding amount at the calculated index
+    // companies[companyName][index] = biddingAmount; // Insert the bidding amount at the calculated index
+    companies[companyName].biddingAmounts[index] = biddingAmount; // Insert the bidding amount at the calculated index
+    companies[companyName].biddingTimes[index] = biddingTime; // Insert the bidding time at the calculated index
   });
 
-  const transformedData = Object.entries(companies).map(([companyName, allBid],index) => {
-    allBid.unshift(null); // Add null at the beginning of the array
+  const transformedData = Object.entries(companies).map(([companyName, {biddingAmounts, biddingTimes}],index) => {
+    biddingAmounts.unshift(null); // Add null at the beginning of the array
+    biddingTimes.unshift(null); // Add null at the beginning of the array
     return {
       label: companyName,
-      data: allBid,
+      data: biddingAmounts,
+      date: biddingTimes,
       borderColor: "#000",
       fill: false,
       pointBorderColor: "#fff",
@@ -115,6 +123,8 @@ const computeDataEnglish = (data) => {
       pointBackgroundColor: colors[index].hex,
     }
   });
+
+  console.log('transformedData:', transformedData)
 
   // จัด data ให้เส้น
   const sortedBiddingAmounts = data.result.map(item => item.detail.bidding_amount).sort((a, b) => b - a);
