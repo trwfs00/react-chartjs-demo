@@ -100,6 +100,7 @@ const CustomLegend = ({ data, onClick, auctionType, selectedSupplier }) => {
               fontSize: 14,
               backgroundColor: selectedSupplier === index ? "#0B4E8015" : "transparent",
               border: selectedSupplier === index ? "1px solid #0B4E8030" : 'none',
+              opacity: selectedSupplier === index ? 1 : 0.6
             }}
           >
             <div
