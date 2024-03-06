@@ -125,13 +125,26 @@ export const data_english = label => {
     datasets: [
       {
         label: "1 บวก 2 พี่น้องกัน จำกัด",
+        date: [
+          null,
+          new Date("01/17/2024"),
+          new Date("01/18/2024"),
+          new Date("01/19/2024"),
+          new Date("01/20/2024"),
+          new Date("01/21/2024"),
+          new Date("01/22/2024"),
+          new Date("01/23/2024"),
+          new Date("01/24/2024"),
+          new Date("01/25/2024"),
+          new Date("01/26/2024"),
+        ],
         data: bid,
         pointBackgroundColor: color,
         borderColor: "rgb(0,0,0)",
         pointRadius: 7,
         borderWidth: 1.8,
         drawBorder: false,
-        pointBorderColor: '#fff',
+        pointBorderColor: "#fff",
       },
     ],
   }
@@ -176,6 +189,14 @@ export const data_sealed_reverse = label => {
       {
         label: "1 เฮลท์แคร์ จำกัด",
         data: [null, 1500000, 1400000, 1300000, 1100000, 900000],
+        date: [
+          null,
+          new Date("01/17/2024"),
+          new Date("01/18/2024"),
+          new Date("01/19/2024"),
+          new Date("01/20/2024"),
+          new Date("01/21/2024"),
+        ],
         fill: false,
         pointRadius: 7,
         borderWidth: 1.8,
@@ -188,6 +209,12 @@ export const data_sealed_reverse = label => {
       {
         label: "1 บวก 2 พี่น้องกัน จำกัด",
         data: [null, 1450000, 1200000, 950000],
+        date: [
+          null,
+          new Date("2024-02-22T02:28:19.554Z"),
+          new Date("2024-02-22T02:27:45.255Z"),
+          new Date("01/20/2024"),
+        ],
         fill: false,
         pointRadius: 7,
         borderWidth: 1.8,
@@ -197,10 +224,10 @@ export const data_sealed_reverse = label => {
         pointBackgroundColor: "#16A651",
         backgroundColor: "#16A651",
       },
-
       {
         label: "Praut Company",
         data: [null, 1500000, 1000000],
+        date: [null, new Date("01/19/2024"), new Date("01/20/2024")],
         fill: false,
         pointRadius: 7,
         borderWidth: 1.8,
