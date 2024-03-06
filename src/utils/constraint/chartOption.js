@@ -1,20 +1,22 @@
+import { externalTooltipHandler } from "../customTooltip"
+
 let delayed
 const BORDER = true
 const chartOption = {
   SEALED_OPTION: {
     responsive: true,
-    animation: {
-      onComplete: () => {
-        delayed = true
-      },
-      delay: context => {
-        let delay = 0
-        if (context.type === "data" && context.mode === "default" && !delayed) {
-          delay = context.dataIndex * 300 + context.datasetIndex * 100
-        }
-        return delay
-      },
-    },
+    // animation: {
+    //   onComplete: () => {
+    //     delayed = true
+    //   },
+    //   delay: context => {
+    //     let delay = 0
+    //     if (context.type === "data" && context.mode === "default" && !delayed) {
+    //       delay = context.dataIndex * 300 + context.datasetIndex * 100
+    //     }
+    //     return delay
+    //   },
+    // },
     scales: {
       x: {
         title: {
@@ -66,22 +68,6 @@ const chartOption = {
     plugins: {
       legend: {
         display: false,
-        align: "start",
-        position: "bottom",
-        fullSize: false,
-        labels: {
-          pointStyle: "circle",
-          usePointStyle: true,
-          pointStyleWidth: 16,
-          borderRadius: 8,
-          useBorderRadius: true,
-          padding: 12,
-          color: "#0B4E80",
-          font: {
-            size: 12,
-            weight: "500",
-          }
-        },
       },
       title: {
         display: false,
@@ -104,45 +90,23 @@ const chartOption = {
         },
       },
       tooltip: {
-        enabled: true,
-        backgroundColor: 'rgba(11, 78, 128, 0.9)',
-        titleColor: '#fff',
-        titleFont: { weight: 'bold' },
-        titleAlign: 'left',
-        titleSpacing: 2,
-        bodyColor: '#fff',
-        bodyFont: { weight: 'bold' }, // Customize font properties
-        bodyAlign: 'left',
-        bodySpacing: 2,
-        footerColor: '#fff',
-        footerFont: { weight: 'bold' },
-        footerAlign: 'left',
-        footerSpacing: 2,
-        padding: 6,
-        position: 'average', // Adjust as needed
-        usePointStyle: true,
+        enabled: false,
+        position: "nearest",
+        external: externalTooltipHandler,
         callbacks: {
-          title: (context) => {
-            return `Bid No. ${context[0].label}`
-          },
-          label: (context) => {
-            let label = context.dataset.label || '';
-            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            return `${label} - ${time}`;
-          },
-          labelPointStyle: () => {
-            return {
-              pointStyle: 'circle',
-              rotation: 0
-            }
-          },
-          footer: (context) => {
-            const bidAmount = `${context[0].formattedValue} (THB)`
-            const date = formatDateToCustomString(new Date());
-            return `${bidAmount}\n${date}`;
+          label: context => {
+            let label = context.dataset.label || ""
+            const bidAmount = `${context.parsed.y.toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+            })} (THB)`
+            const date = formatDateToCustomString(
+              context.dataset.date[context.dataIndex]
+            )
+            const body = { label: label, bidAmount: bidAmount, date: date }
+            return body
           },
         },
-      }
+      },
     },
   },
   ENGLISH_OPTION: {
@@ -224,7 +188,7 @@ const chartOption = {
           font: {
             size: 12,
             weight: "500",
-          }
+          },
         },
       },
       title: {
@@ -249,64 +213,79 @@ const chartOption = {
       },
       tooltip: {
         enabled: true,
-        backgroundColor: 'rgba(11, 78, 128, 0.9)',
-        titleColor: '#fff',
-        titleFont: { weight: 'bold' },
-        titleAlign: 'left',
+        backgroundColor: "rgba(11, 78, 128, 0.9)",
+        titleColor: "#fff",
+        titleFont: { weight: "bold" },
+        titleAlign: "left",
         titleSpacing: 2,
-        bodyColor: '#fff',
+        bodyColor: "#fff",
         bodyFont: {}, // Customize font properties
-        bodyAlign: 'left',
+        bodyAlign: "left",
         bodySpacing: 2,
-        footerColor: '#fff',
-        footerFont: { weight: 'bold' },
-        footerAlign: 'left',
+        footerColor: "#fff",
+        footerFont: { weight: "bold" },
+        footerAlign: "left",
         footerSpacing: 2,
         padding: 6,
-        position: 'average', // Adjust as needed
+        position: "average", // Adjust as needed
         usePointStyle: true,
         callbacks: {
-          title: (context) => {
+          title: context => {
             return `Bid No. ${context[0].label}`
           },
-          label: (context) => {
-            let label = context.dataset.label || '';
-            return label;
+          label: context => {
+            let label = context.dataset.label || ""
+            return label
           },
           labelPointStyle: () => {
             return {
-              pointStyle: 'circle',
-              rotation: 0
+              pointStyle: "circle",
+              rotation: 0,
             }
           },
-          footer: (context) => {
+          footer: context => {
             const bidAmount = `${context[0].formattedValue} (THB)`
-            const date = formatDateToCustomString(new Date());
-            return `${bidAmount}\n${date}`;
+            const date = formatDateToCustomString(new Date())
+            return `${bidAmount}\n${date}`
           },
         },
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
-const formatDateToCustomString = (date) => {
-  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const formatDateToCustomString = date => {
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ]
 
   // Extract date components
-  const day = date.getDate();
-  const month = monthNames[date.getMonth()];
-  const year = date.getFullYear();
+  const day = date.getDate()
+  const month = monthNames[date.getMonth()]
+  const year = date.getFullYear()
 
   // Extract time components
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const amOrPm = hours >= 12 ? 'PM' : 'AM';
-  const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')} ${amOrPm}`;
+  const hours = date.getHours()
+  const minutes = date.getMinutes()
+  const amOrPm = hours >= 12 ? "PM" : "AM"
+  const formattedTime = `${hours % 12 || 12}:${minutes
+    .toString()
+    .padStart(2, "0")} ${amOrPm}`
 
   // Combine date and time
-  const formattedDateTime = `${month} ${day}, ${year} ${formattedTime}`;
-  return formattedDateTime;
+  const formattedDateTime = `${month} ${day}, ${year} ${formattedTime}`
+  return formattedDateTime
 }
 
 export default chartOption
