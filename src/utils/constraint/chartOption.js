@@ -135,7 +135,7 @@ const options = reservedPrice => {
   }
 }
 
-const formatDateToCustomString = date => {
+const formatDateToCustomString = (date) => {
   const monthNames = [
     "Jan",
     "Feb",
@@ -149,24 +149,25 @@ const formatDateToCustomString = date => {
     "Oct",
     "Nov",
     "Dec",
-  ]
+  ];
 
   // Extract date components
-  const day = date.getDate()
-  const month = monthNames[date.getMonth()]
-  const year = date.getFullYear()
+  const day = date.getDate();
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
 
   // Extract time components
-  const hours = date.getHours()
-  const minutes = date.getMinutes()
-  const amOrPm = hours >= 12 ? "PM" : "AM"
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  const amOrPm = hours >= 12 ? "PM" : "AM";
   const formattedTime = `${hours % 12 || 12}:${minutes
     .toString()
-    .padStart(2, "0")} ${amOrPm}`
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${amOrPm}`;
 
   // Combine date and time
-  const formattedDateTime = `${month} ${day}, ${year} ${formattedTime}`
-  return formattedDateTime
-}
+  const formattedDateTime = `${month} ${day}, ${year} ${formattedTime}`;
+  return formattedDateTime;
+};
 
 export default options
