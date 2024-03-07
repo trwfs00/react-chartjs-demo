@@ -159,18 +159,18 @@ const computeDataSealedReverse = (data) => {
   const result = [];
   const companyData = {};
 
-  data.result.forEach((item) => {
+  [...data.result].reverse().forEach((item, index, arr) => {
     const { company_name, bidding_amount, bidding_time } = item.detail;
     if (!companyData[company_name]) {
       companyData[company_name] = [];
     }
     companyData[company_name].push({ bidding_amount, bidding_time });
-  });
+  }, data.result.length - 1);
 
   console.log('companyData:', companyData)
 
   Object.entries(companyData).forEach(([key, value], index) => {
-    let bids = value.map(item => item.bidding_amount).sort((a, b) => b - a);
+    let bids = value.map(item => item.bidding_amount)
     bids.unshift(null)
     let bidDate = value.map(item => item.bidding_time)
     bidDate.unshift(null)
@@ -199,18 +199,18 @@ const computeDataSealedForward = (data) => {
   const result = [];
   const companyData = {};
 
-  data.result.forEach((item) => {
+  [...data.result].reverse().forEach((item, index, arr) => {
     const { company_name, bidding_amount, bidding_time } = item.detail;
     if (!companyData[company_name]) {
       companyData[company_name] = [];
     }
     companyData[company_name].push({ bidding_amount, bidding_time });
-  });
+  }, data.result.length - 1);
 
   console.log('companyData:', companyData)
 
   Object.entries(companyData).forEach(([key, value], index) => {
-    let bids = value.map(item => item.bidding_amount).sort((a, b) => a - b);
+    let bids = value.map(item => item.bidding_amount)
     bids.unshift(null)
     let bidDate = value.map(item => item.bidding_time)
     bidDate.unshift(null)
