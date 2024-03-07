@@ -42,7 +42,7 @@ const computeDataEnglishReverse = (data) => {
   data.result.forEach(result => {
     const companyName = result.detail.company_name;
     const biddingAmount = result.detail.bidding_amount;
-    const biddingTime = new Date(result.detail.bidding_time) // Format bidding time to MM-DD-YYYY
+    const biddingTime = result.detail.bidding_time // Format bidding time to MM-DD-YYYY
 
     if (!companies[companyName]) {
       companies[companyName] = {
@@ -102,7 +102,7 @@ const computeDataEnglishForward = (data) => {
   data.result.forEach(result => {
     const companyName = result.detail.company_name;
     const biddingAmount = result.detail.bidding_amount;
-    const biddingTime = new Date(result.detail.bidding_time) // Format bidding time to MM-DD-YYYY
+    const biddingTime = result.detail.bidding_time // Format bidding time to MM-DD-YYYY
 
     if (!companies[companyName]) {
       companies[companyName] = {
@@ -172,7 +172,7 @@ const computeDataSealedReverse = (data) => {
   Object.entries(companyData).forEach(([key, value], index) => {
     let bids = value.map(item => item.bidding_amount).sort((a, b) => b - a);
     bids.unshift(null)
-    let bidDate = value.map(item => new Date(item.bidding_time))
+    let bidDate = value.map(item => item.bidding_time)
     bidDate.unshift(null)
     result.push({
       label: key,
@@ -212,7 +212,7 @@ const computeDataSealedForward = (data) => {
   Object.entries(companyData).forEach(([key, value], index) => {
     let bids = value.map(item => item.bidding_amount).sort((a, b) => a - b);
     bids.unshift(null)
-    let bidDate = value.map(item => new Date(item.bidding_time))
+    let bidDate = value.map(item => item.bidding_time)
     bidDate.unshift(null)
     result.push({
       label: key,

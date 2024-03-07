@@ -135,7 +135,7 @@ const options = reservedPrice => {
   }
 }
 
-const formatDateToCustomString = (date) => {
+const formatDateToCustomString = (inputDate) => {
   const monthNames = [
     "Jan",
     "Feb",
@@ -150,6 +150,9 @@ const formatDateToCustomString = (date) => {
     "Nov",
     "Dec",
   ];
+
+  // Parse the input date string
+  const date = new Date(inputDate);
 
   // Extract date components
   const day = date.getDate();
@@ -169,5 +172,6 @@ const formatDateToCustomString = (date) => {
   const formattedDateTime = `${month} ${day}, ${year} ${formattedTime}`;
   return formattedDateTime;
 };
+
 
 export default options

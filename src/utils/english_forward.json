@@ -12,7 +12,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1486,
                 "bidding_amount": 1900000,
-                "bidding_time": "2024-01-12T03:29:00.000Z",
+                "bidding_time": "2024-01-12T15:29:00.000+07:00",
                 "selected": false,
                 "accepted": false,
                 "company_name": "1 เฮลท์แคร์ จำกัด"
@@ -24,7 +24,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1486,
                 "bidding_amount": 1850000,
-                "bidding_time": "2024-01-12T03:25:00.000Z",
+                "bidding_time": "2024-01-12T15:25:00.000+07:00",
                 "selected": false,
                 "accepted": false,
                 "company_name": "1 บวก 2 พี่น้องกัน จำกัด"
@@ -36,7 +36,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1486,
                 "bidding_amount": 1800000,
-                "bidding_time": "2024-01-12T03:20:00.000Z",
+                "bidding_time": "2024-01-12T15:20:00.000+07:00",
                 "selected": false,
                 "accepted": false,
                 "company_name": "Praut Company"
@@ -48,7 +48,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1486,
                 "bidding_amount": 1750000,
-                "bidding_time": "2024-01-12T03:15:00.000Z",
+                "bidding_time": "2024-01-12T15:15:00.000+07:00",
                 "selected": false,
                 "accepted": false,
                 "company_name": "1 เฮลท์แคร์ จำกัด"
@@ -60,7 +60,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1486,
                 "bidding_amount": 1701000,
-                "bidding_time": "2024-01-12T03:13:00.000Z",
+                "bidding_time": "2024-01-12T15:13:00.000+07:00",
                 "selected": false,
                 "accepted": false,
                 "company_name": "1 บวก 2 พี่น้องกัน จำกัด"
@@ -72,7 +72,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1486,
                 "bidding_amount": 1700000,
-                "bidding_time": "2024-01-12T03:10:00.000Z",
+                "bidding_time": "2024-01-12T15:10:00.000+07:00",
                 "selected": false,
                 "accepted": false,
                 "company_name": "1 เฮลท์แคร์ จำกัด"
@@ -84,7 +84,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1489,
                 "bidding_amount": 1650000,
-                "bidding_time": "2024-01-12T03:08:00.000Z",
+                "bidding_time": "2024-01-12T15:08:00.000+07:00",
                 "selected": false,
                 "accepted": false,
                 "company_name": "1 เฮลท์แคร์ จำกัด"
@@ -96,7 +96,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1489,
                 "bidding_amount": 1600000,
-                "bidding_time": "2024-01-12T03:05:00.000Z",
+                "bidding_time": "2024-01-12T15:05:00.000+07:00",
                 "selected": false,
                 "accepted": false,
                 "company_name": "Praut Company"
@@ -108,7 +108,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1486,
                 "bidding_amount": 1550000,
-                "bidding_time": "2024-01-12T03:03:00.000Z",
+                "bidding_time": "2024-01-12T15:03:00.000+07:00",
                 "selected": true,
                 "accepted": false,
                 "company_name": "1 บวก 2 พี่น้องกัน จำกัด"
@@ -120,7 +120,7 @@
                 "auction_id": "7c764644-9256-4c7a-a8d8-0946dac4dade",
                 "supplier_id": 1484,
                 "bidding_amount": 1500000,
-                "bidding_time": "2024-01-12T03:00:00.000Z",
+                "bidding_time": "2024-01-12T15:00:00.000+07:00",
                 "selected": true,
                 "accepted": false,
                 "company_name": "1 เฮลท์แคร์ จำกัด"
